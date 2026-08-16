@@ -1,0 +1,383 @@
+/* ============================================================
+   OpenContact — site de présentation
+   Identité « Utilitaire 98 » : encre sur papier, bevels francs,
+   ombres dures sans flou, coins droits. Les tokens viennent du
+   produit (styles/tokens/) et sont copiés ici : le site tient
+   seul, il ne dépend d'aucun réseau.
+   ============================================================ */
+
+/* ---------- Polices ---------- */
+
+@font-face{
+  font-family:'Silkscreen'; font-style:normal; font-weight:400;
+  src:url('assets/fonts/Silkscreen-Regular.woff2') format('woff2'); font-display:swap;
+}
+@font-face{
+  font-family:'Silkscreen'; font-style:normal; font-weight:700;
+  src:url('assets/fonts/Silkscreen-Bold.woff2') format('woff2'); font-display:swap;
+}
+@font-face{
+  font-family:'Public Sans'; font-style:normal; font-weight:100 900;
+  src:url('assets/fonts/PublicSans%5Bwght%5D.woff2') format('woff2-variations'); font-display:swap;
+}
+@font-face{
+  font-family:'IBM Plex Mono'; font-style:normal; font-weight:400;
+  src:url('assets/fonts/IBMPlexMono-Regular.woff2') format('woff2'); font-display:swap;
+}
+
+/* ---------- Tokens : thème clair ---------- */
+
+:root{
+  --gray-0:#FFFFFF;
+  --gray-1:#F7F6F1;
+  --gray-2:#ECEAE2;
+  --gray-3:#DDDACE;
+  --desktop:#E7E5DD;
+
+  --ink:#1D242C;
+  --ink-2:#5C6672;
+  --ink-3:#8B94A0;
+
+  --teal:#0B7268;
+  --teal-hover:#085A52;
+  --teal-wash:#E3EFED;
+  --on-teal:#FFFFFF;
+
+  --navy:#27337F;
+  --on-navy:#FFFFFF;
+
+  --amber:#8F5A00;
+  --amber-wash:#F6ECD9;
+
+  --border-strong:var(--ink);
+  --border-frame:#A8A395;
+  --border-soft:#C9C6BA;
+
+  --bevel-up:inset 1px 1px 0 rgba(255,255,255,.7), inset -1px -1px 0 rgba(29,36,44,.14);
+  --bevel-down:inset 1px 1px 0 rgba(29,36,44,.18), inset -1px -1px 0 rgba(255,255,255,.5);
+  --shadow-raised:2px 2px 0 0 rgba(29,36,44,.18);
+  --shadow-window:4px 4px 0 0 rgba(29,36,44,.16);
+
+  --dither-img:repeating-conic-gradient(rgba(29,36,44,.14) 0% 25%, transparent 0% 50%);
+  --dither-size:4px 4px;
+
+  --text-12:0.75rem;
+  --text-13:0.8125rem;
+  --text-15:0.9375rem;
+  --text-16:1rem;
+  --text-20:1.25rem;
+  --pixel-16:16px;
+  --pixel-24:24px;
+
+  --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px;
+  --sp-5:24px; --sp-6:32px; --sp-7:48px; --sp-8:64px;
+
+  --ctl:44px;                      /* au doigt */
+  --wrap:1080px;
+}
+
+/* La souris ET la largeur, pas l'une sans l'autre (produit, §5) */
+@media (min-width:901px) and (pointer:fine){
+  :root{ --ctl:32px; }
+}
+
+/* ---------- Tokens : thème sombre ---------- */
+
+html[data-theme="dark"]{
+  --gray-0:#12151A;
+  --gray-1:#1E232B;
+  --gray-2:#262C35;
+  --gray-3:#313947;
+  --desktop:#15181D;
+
+  --ink:#E9ECEF;
+  --ink-2:#9AA4B0;
+  --ink-3:#657080;
+
+  --teal:#3BC9BA;
+  --teal-hover:#63DACD;
+  --teal-wash:#12332F;
+  --on-teal:#06251F;
+
+  --navy:#4A5BC4;
+
+  --amber:#E3A648;
+  --amber-wash:#332812;
+
+  --border-frame:#4E5A68;
+  --border-soft:#3A434F;
+
+  --bevel-up:inset 1px 1px 0 rgba(255,255,255,.10), inset -1px -1px 0 rgba(0,0,0,.45);
+  --bevel-down:inset 1px 1px 0 rgba(0,0,0,.5), inset -1px -1px 0 rgba(255,255,255,.08);
+  --shadow-raised:2px 2px 0 0 rgba(0,0,0,.5);
+  --shadow-window:4px 4px 0 0 rgba(0,0,0,.55);
+
+  --dither-img:repeating-conic-gradient(rgba(233,236,239,.10) 0% 25%, transparent 0% 50%);
+}
+
+/* ---------- Socle ---------- */
+
+*,*::before,*::after{ box-sizing:border-box; }
+
+html{ -webkit-text-size-adjust:100%; }
+
+body{
+  margin:0;
+  font-family:'Public Sans', system-ui, sans-serif;
+  font-size:var(--text-16);
+  line-height:1.6;
+  color:var(--ink);
+  background:var(--desktop);
+  overflow-x:hidden;              /* ceinture : rien ne fait glisser la page */
+}
+
+::selection{ background:var(--navy); color:var(--on-navy); }
+
+img,svg{ max-width:100%; height:auto; display:block; }
+
+a{ color:var(--teal); text-underline-offset:2px; }
+@media (hover:hover){ a:hover{ color:var(--teal-hover); } }
+
+h1,h2,h3{ font-family:'Silkscreen', monospace; font-weight:700; line-height:1.25; margin:0; }
+h1{ font-size:var(--pixel-24); letter-spacing:-.01em; }
+h2{ font-size:var(--pixel-16); }
+h3{ font-family:'Public Sans', sans-serif; font-size:var(--text-16); font-weight:700; }
+
+p{ margin:0 0 var(--sp-3); }
+p:last-child{ margin-bottom:0; }
+
+.wrap{ max-width:var(--wrap); margin-inline:auto; padding-inline:var(--sp-4); }
+
+.mono{ font-family:'IBM Plex Mono', monospace; font-size:var(--text-13); }
+.muted{ color:var(--ink-2); }
+
+/* Lien d'évitement — vise un élément focalisable */
+.skip{
+  position:absolute; left:-9999px; top:0; z-index:100;
+  background:var(--gray-1); color:var(--ink);
+  border:1px solid var(--border-strong); padding:var(--sp-2) var(--sp-3);
+}
+.skip:focus{ left:var(--sp-3); top:var(--sp-3); }
+
+:focus-visible{ outline:2px solid var(--teal); outline-offset:2px; }
+
+/* ---------- Le châssis : barre de titre + fenêtre ---------- */
+
+.win{
+  background:var(--gray-1);
+  border:1px solid var(--border-strong);
+  box-shadow:var(--shadow-window);
+}
+
+.win-t{
+  display:flex; align-items:center; gap:var(--sp-2);
+  background:var(--navy); color:var(--on-navy);
+  padding:var(--sp-1) var(--sp-2);
+  font-family:'Silkscreen', monospace; font-size:11px;
+  border-bottom:1px solid var(--border-strong);
+}
+.win-t .dots{ display:flex; gap:3px; margin-left:auto; }
+.win-t .dots i{
+  width:11px; height:11px; display:block;
+  background:var(--gray-2); border:1px solid var(--ink);
+}
+.win-b{ padding:var(--sp-4); }
+
+/* ---------- L'en-tête ---------- */
+
+.top{
+  position:sticky; top:0; z-index:20;
+  background:var(--gray-2);
+  border-bottom:1px solid var(--border-strong);
+  box-shadow:var(--shadow-raised);
+}
+.top-in{
+  display:flex; align-items:center; gap:var(--sp-3);
+  min-height:var(--ctl);
+  padding-block:var(--sp-2);
+}
+.brand{
+  display:flex; align-items:center; gap:var(--sp-2);
+  font-family:'Silkscreen', monospace; font-weight:700; font-size:13px;
+  color:var(--ink); text-decoration:none;
+}
+.brand img{ width:20px; height:20px; }
+.top nav{ margin-left:auto; display:flex; align-items:center; gap:var(--sp-1); }
+
+/* ---------- Boutons ---------- */
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:var(--sp-2);
+  min-height:var(--ctl); padding:0 var(--sp-4);
+  font-family:'Public Sans', sans-serif; font-size:var(--text-15); font-weight:600;
+  color:var(--ink); background:var(--gray-2);
+  border:1px solid var(--border-strong); border-radius:0;
+  box-shadow:var(--bevel-up), var(--shadow-raised);
+  text-decoration:none; cursor:pointer;
+}
+@media (hover:hover){ .btn:hover{ background:var(--gray-3); color:var(--ink); } }
+.btn:active{ box-shadow:var(--bevel-down); transform:translate(1px,1px); }
+
+.btn-1{ background:var(--teal); color:var(--on-teal); border-color:var(--border-strong); }
+@media (hover:hover){ .btn-1:hover{ background:var(--teal-hover); color:var(--on-teal); } }
+
+.btn-icon{ padding:0; width:var(--ctl); min-width:var(--ctl); font-size:var(--text-16); }
+
+/* ---------- Les sections ---------- */
+
+section{ padding-block:var(--sp-7); }
+section + section{ border-top:1px solid var(--border-soft); }
+
+.lead{ font-size:var(--text-20); line-height:1.45; max-width:34em; }
+
+.eyebrow{
+  font-family:'IBM Plex Mono', monospace; font-size:var(--text-12);
+  text-transform:uppercase; letter-spacing:.08em; color:var(--ink-2);
+  margin:0 0 var(--sp-2);
+}
+
+/* ---------- Le héros ---------- */
+
+.hero{
+  padding-block:var(--sp-8) var(--sp-7);
+  background:var(--dither-img) 0 0 / var(--dither-size);
+}
+.hero h1{ font-size:clamp(20px, 5vw, 34px); margin-bottom:var(--sp-4); max-width:16em; }
+.hero .lead{ margin-bottom:var(--sp-5); }
+.hero-cta{ display:flex; flex-wrap:wrap; gap:var(--sp-3); align-items:center; }
+.hero-note{ font-size:var(--text-13); color:var(--ink-2); margin-top:var(--sp-4); }
+
+/* ---------- Grilles ---------- */
+
+.grid{ display:grid; gap:var(--sp-4); }
+.grid-2{ grid-template-columns:1fr; }
+.grid-3{ grid-template-columns:1fr; }
+.grid > *{ min-width:0; }        /* jamais de min-width:auto qui déborde */
+
+@media (min-width:901px){
+  .grid-2{ grid-template-columns:repeat(2,1fr); }
+  .grid-3{ grid-template-columns:repeat(3,1fr); }
+}
+
+/* ---------- Le cadre de groupe (fieldset 98) ---------- */
+
+.card{
+  background:var(--gray-1);
+  border:1px solid var(--border-frame);
+  padding:var(--sp-4);
+}
+.card h3{ margin:0 0 var(--sp-2); }
+.card p{ font-size:var(--text-15); color:var(--ink-2); }
+
+/* ---------- Le chiffre qui décide ---------- */
+
+.stat{
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:var(--sp-3);
+  margin-bottom:var(--sp-3);
+}
+.stat b{
+  font-family:'Silkscreen', monospace; font-size:var(--pixel-24);
+  color:var(--teal); font-weight:700;
+}
+.stat span{ font-size:var(--text-15); color:var(--ink-2); }
+
+.bars{ margin:var(--sp-4) 0 0; }
+.bar{ margin-bottom:var(--sp-3); }
+.bar-l{
+  display:flex; justify-content:space-between; gap:var(--sp-3);
+  font-size:var(--text-13); margin-bottom:var(--sp-1);
+}
+.bar-l b{ font-family:'IBM Plex Mono', monospace; }
+.bar-t{
+  height:16px; background:var(--gray-0);
+  border:1px solid var(--border-strong); box-shadow:var(--bevel-down);
+}
+.bar-f{ height:100%; background:var(--teal); }
+.bar-f.cold{ background:var(--dither-img) 0 0 / var(--dither-size), var(--gray-3); }
+
+/* ---------- Les captures ---------- */
+
+.shots{ display:grid; gap:var(--sp-4); grid-template-columns:1fr; }
+@media (min-width:721px){ .shots{ grid-template-columns:repeat(2,1fr); } }
+
+figure{ margin:0; }
+figure img{
+  width:100%; border:1px solid var(--border-strong);
+  box-shadow:var(--shadow-window); background:var(--gray-1);
+}
+figcaption{
+  font-size:var(--text-13); color:var(--ink-2);
+  margin-top:var(--sp-2); padding-left:var(--sp-1);
+  border-left:2px solid var(--teal);
+}
+
+/* La capture suit le thème de la page. Une capture claire posée sur un
+   fond sombre fait un bloc éblouissant — et l'app, elle, a bien un thème
+   sombre : la montrer en clair mentirait sur ce qu'on verra. Le choix
+   passe par le sélecteur, pas par `prefers-color-scheme` seul, sinon la
+   bascule manuelle n'emporte pas les images. */
+.sh-sombre{ display:none; }
+html[data-theme="dark"] .sh-clair{ display:none; }
+html[data-theme="dark"] .sh-sombre{ display:block; }
+
+/* ---------- L'état des surfaces ---------- */
+
+.surf{ list-style:none; margin:0; padding:0; }
+.surf li{
+  display:grid; gap:var(--sp-1) var(--sp-3);
+  grid-template-columns:auto 1fr;
+  padding:var(--sp-3) 0;
+  border-bottom:1px dotted var(--border-frame);
+}
+.surf li:last-child{ border-bottom:0; }
+.surf .st{
+  font-family:'IBM Plex Mono', monospace; font-size:var(--text-12);
+  text-transform:uppercase; letter-spacing:.04em;
+  padding:2px var(--sp-2); border:1px solid currentColor;
+  white-space:nowrap; align-self:start;
+}
+.st-on{ color:var(--teal); }
+.st-wait{ color:var(--amber); background:var(--amber-wash); }
+.st-off{ color:var(--ink-3); }
+.surf b{ display:block; }
+.surf p{ grid-column:1 / -1; font-size:var(--text-15); color:var(--ink-2); margin:0; }
+@media (min-width:721px){
+  .surf p{ grid-column:2; }
+}
+
+/* ---------- La liste des refus ---------- */
+
+.never{ list-style:none; margin:0; padding:0; }
+.never li{
+  position:relative; padding-left:var(--sp-5); margin-bottom:var(--sp-3);
+  font-size:var(--text-15);
+}
+.never li::before{
+  content:'✕'; position:absolute; left:0; top:0;
+  font-family:'IBM Plex Mono', monospace; color:var(--teal); font-weight:700;
+}
+
+/* ---------- Le pied ---------- */
+
+footer{
+  background:var(--gray-2);
+  border-top:1px solid var(--border-strong);
+  padding-block:var(--sp-6);
+  font-size:var(--text-13);
+}
+footer .grid{ gap:var(--sp-5); }
+footer h3{ font-family:'Silkscreen',monospace; font-size:11px; margin:0 0 var(--sp-2); }
+footer ul{ list-style:none; margin:0; padding:0; }
+footer li{ margin-bottom:var(--sp-1); }
+.legal{
+  margin-top:var(--sp-5); padding-top:var(--sp-4);
+  border-top:1px solid var(--border-soft); color:var(--ink-2);
+}
+
+/* ---------- Mouvement : seulement le déplacement entre états ---------- */
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important; transition-duration:.01ms !important;
+  }
+}

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>OpenContact — le fil de ta recherche, partagé avec ton groupe</title>
+<meta name="description" content="OpenContact répond à « je fais quoi maintenant ? » dans ta recherche de stage, d'alternance ou d'emploi, et fait circuler les bonnes pistes dans ton groupe. Tes données restent sur tes appareils, sans compte et sans serveur.">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#F7F6F1">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="OpenContact — pistes &amp; contacts partagés">
+<meta property="og:description" content="Trouve, enrichis et partage des pistes de stage, d'alternance ou d'emploi avec ton groupe. Tes données restent sur tes appareils, sans compte et sans serveur.">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="assets/piste-a-reseau.svg">
+<link rel="apple-touch-icon" href="assets/icon.svg">
+<link rel="stylesheet" href="styles.css">
+
+<!-- Le thème avant le premier pixel : sinon quelqu'un en sombre prend
+     du clair en pleine figure au chargement. -->
+<script>
+(function(){
+  try{
+    var t = localStorage.getItem('oc_site_theme');
+    if(!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', t);
+  }catch(e){ document.documentElement.setAttribute('data-theme','light'); }
+})();
+</script>
+</head>
+<body>
+
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#contenu">
+      <img src="assets/piste-a-reseau.svg" alt="" width="20" height="20">
+      OpenContact
+    </a>
+    <nav aria-label="Navigation principale">
+      <button class="btn btn-icon" id="theme" type="button"
+              aria-label="Basculer entre le thème clair et sombre"
+              title="Thème clair / sombre">◐</button>
+      <a class="btn btn-1" href="https://mahi010110.github.io/Open-Contact/">Essayer</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu" tabindex="-1">
+
+  <!-- ────────────── Le héros ────────────── -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Recherche de stage, d'alternance ou d'emploi</p>
+      <h1>Tu sais où tu as postulé. Sais-tu quoi faire maintenant&nbsp;?</h1>
+      <p class="lead">
+        OpenContact tient le fil de ta recherche et te dit le prochain geste.
+        Et quand un camarade est déjà passé par une entreprise, l'info voyage
+        avec la piste — parce que c'est ça qui décroche un entretien.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-1" href="https://mahi010110.github.io/Open-Contact/">Ouvrir l'application</a>
+        <a class="btn" href="#surfaces">Où en est le projet</a>
+      </div>
+      <p class="hero-note mono">
+        Rien à installer · Aucun compte · Tes données restent sur ton appareil
+      </p>
+    </div>
+  </section>
+
+  <!-- ────────────── Le problème ────────────── -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Le problème</p>
+      <h2>Vingt entreprises repérées, et zéro idée de par où reprendre</h2>
+      <div class="grid grid-2" style="margin-top:24px">
+        <div>
+          <p>
+            Trois messages envoyés, deux réponses en attente, une relance
+            oubliée depuis trois semaines. Tout est quelque part — dans un
+            tableur, dans tes mails, dans ta tête.
+          </p>
+          <p>
+            Un tableur range, il ne pousse pas. Un CRM professionnel est fait
+            pour des commerciaux qui gèrent des comptes, pas pour un étudiant
+            qui cherche une place.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Et pendant ce temps</h3>
+          <p>
+            Ton voisin de classe a fait son stage exactement là où tu
+            postules à froid. Il le sait. Tu ne le sais pas. Et personne n'a
+            d'endroit où le dire.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────── Le chiffre ────────────── -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Ce qui change tout</p>
+      <h2>Une piste portée par quelqu'un vaut treize pistes froides</h2>
+
+      <div class="grid grid-2" style="margin-top:24px">
+        <div>
+          <p>
+            Une candidature envoyée à froid décroche un entretien dans environ
+            <b>3&nbsp;%</b> des cas. La même candidature, portée par quelqu'un
+            qui est déjà dans l'entreprise&nbsp;: environ <b>40&nbsp;%</b>.
+          </p>
+          <p>
+            Une promo entière a déjà fait des stages. Ce réseau existe déjà —
+            il n'est simplement écrit nulle part.
+          </p>
+          <p class="muted" style="font-size:.9375rem">
+            Quand un camarade te donne ses pistes et déclare «&nbsp;j'y suis
+            passé&nbsp;», son prénom voyage avec la piste. L'app te propose
+            alors d'aller lui demander <b>de vive voix</b>&nbsp;: une demande
+            en face aboutit 34 fois plus souvent que par e-mail, et celui qui
+            écrit ne sent aucune différence.
+          </p>
+        </div>
+
+        <div class="card bars">
+          <div class="bar">
+            <div class="bar-l"><span>Candidature à froid</span> <b>~3 %</b></div>
+            <div class="bar-t"><div class="bar-f cold" style="width:7.5%"></div></div>
+          </div>
+          <div class="bar">
+            <div class="bar-l"><span>Portée par quelqu'un de dedans</span> <b>~40 %</b></div>
+            <div class="bar-t"><div class="bar-f" style="width:100%"></div></div>
+          </div>
+          <p class="mono muted" style="margin-top:16px">
+            Taux d'obtention d'un entretien.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────── Les écrans ────────────── -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">L'application</p>
+      <h2>Quatre écrans, un seul but à chaque fois</h2>
+      <p class="lead" style="margin-top:16px">
+        Chaque écran pousse vers un geste concret&nbsp;: écrire, relancer,
+        planifier. Jamais vers un formulaire de plus.
+      </p>
+
+      <div class="shots" style="margin-top:32px">
+        <figure>
+          <img class="sh-clair" src="captures/aujourdhui.png" width="390" height="844"
+               alt="L'écran « Aujourd'hui » sur téléphone : trois groupes — « En retard », « Aujourd'hui » et « Sans nouvelles » — où chaque ligne porte le nom de l'entreprise en tête, suivi du geste à faire.">
+          <img class="sh-sombre" src="captures/aujourdhui-sombre.png" width="390" height="844"
+               alt="L'écran « Aujourd'hui » sur téléphone : trois groupes — « En retard », « Aujourd'hui » et « Sans nouvelles » — où chaque ligne porte le nom de l'entreprise en tête, suivi du geste à faire.">
+          <figcaption>
+            <b>Aujourd'hui</b> — ce qu'il y a à faire, maintenant. Ce qui est
+            planifié, ce qui se tait depuis trop longtemps, et par où
+            commencer quand tu ne sais pas.
+          </figcaption>
+        </figure>
+        <figure>
+          <img class="sh-clair" src="captures/pistes.png" width="390" height="844"
+               alt="L'écran « Mes pistes » sur téléphone : neuf entreprises suivies, chacune avec sa prochaine action, son statut et sa ville.">
+          <img class="sh-sombre" src="captures/pistes-sombre.png" width="390" height="844"
+               alt="L'écran « Mes pistes » sur téléphone : neuf entreprises suivies, chacune avec sa prochaine action, son statut et sa ville.">
+          <figcaption>
+            <b>Mes pistes</b> — toutes tes pistes, leur statut, leur prochaine
+            action. Liste au pouce, tableau à l'écran.
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="grid grid-3" style="margin-top:32px">
+        <div class="card">
+          <h3>Écrire, sans repartir de zéro</h3>
+          <p>
+            Le composeur pose sous tes yeux ce que tu sais de l'entreprise.
+            Une accroche nourrie de recherche fait passer les réponses de
+            ~7&nbsp;% à ~17&nbsp;% — encore faut-il ne pas devoir changer
+            d'écran pour aller la chercher.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Partager avec ton groupe</h3>
+          <p>
+            Un QR code, un fichier, ou en direct d'un téléphone à l'autre.
+            Ton suivi privé — statuts, notes, journal — ne part jamais avec.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Rien ne s'écrase</h3>
+          <p>
+            Recevoir des pistes montre toujours un aperçu <b>avant</b>, et
+            laisse une trentaine de secondes pour annuler <b>après</b>. Ce qui
+            existe n'est jamais remplacé en silence.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────── Les données ────────────── -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Tes données</p>
+      <h2>Il n'y a nulle part où les envoyer</h2>
+
+      <div class="grid grid-2" style="margin-top:24px">
+        <div>
+          <p>
+            Ce n'est pas une promesse, c'est une contrainte d'architecture&nbsp;:
+            <b>il n'existe aucun serveur OpenContact.</b> Tes pistes vivent
+            dans le stockage de ton navigateur.
+          </p>
+          <p>
+            Quand elles circulent, elles vont directement d'un appareil à
+            l'autre, chiffrées — ou par un fichier que tu transportes
+            toi-même. Ce fichier marche toujours&nbsp;: hors ligne, réseau
+            d'établissement filtré, ou simplement de la main à la main.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Ce qu'OpenContact ne fera jamais</h3>
+          <ul class="never" style="margin-top:12px">
+            <li>Aucun serveur, aucun compte, aucune analytique, aucun traçage.</li>
+            <li>Aucune publicité, aucune revente ou exploitation de tes données.</li>
+            <li>Ton suivi privé ne sort jamais dans un partage.</li>
+            <li>Aucune donnée écrasée sans aperçu et sans annulation possible.</li>
+            <li>Aucun suivi d'ouverture de tes e-mails.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────── Les surfaces ────────────── -->
+  <section id="surfaces">
+    <div class="wrap">
+      <p class="eyebrow">Où en est le projet</p>
+      <h2>Un produit, trois surfaces — et une seule existe</h2>
+      <p class="lead" style="margin-top:16px">
+        Autant le dire franchement plutôt que le laisser découvrir.
+      </p>
+
+      <div class="win" style="margin-top:32px">
+        <div class="win-t">
+          <span>État des surfaces</span>
+          <span class="dots"><i></i><i></i><i></i></span>
+        </div>
+        <div class="win-b">
+          <ul class="surf">
+            <li>
+              <span class="st st-on">Livrée</span>
+              <b>Le web</b>
+              <p>
+                L'application que tu peux ouvrir maintenant, dans n'importe
+                quel navigateur. Elle s'installe sur l'écran d'accueil d'un
+                téléphone et fonctionne hors ligne. C'est tout ce qui est
+                décrit sur cette page.
+              </p>
+            </li>
+            <li>
+              <span class="st st-wait">En sommeil</span>
+              <b>L'ordinateur</b>
+              <p>
+                Ce qu'un navigateur ne peut pas garantir&nbsp;: envoyer même
+                application fermée, parler IMAP et SMTP, faire tourner une IA
+                locale. Le code est écrit et testé, mais <b>cette surface ne
+                s'installe pas aujourd'hui</b>. Elle se réveillera si la
+                surface web trouve ses utilisateurs.
+              </p>
+            </li>
+            <li>
+              <span class="st st-off">Non commencée</span>
+              <b>Le téléphone</b>
+              <p>
+                Rien n'existe. Ce n'est pas bloquant&nbsp;: l'application web
+                s'installe déjà depuis le navigateur d'un téléphone et couvre
+                l'essentiel. Une application native n'apporterait que du
+                confort — caméra, partage système, notifications.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="muted" style="margin-top:24px; font-size:.9375rem">
+        Une capacité absente d'une surface <b>n'y apparaît pas</b>. Ni grisée,
+        ni marquée «&nbsp;bientôt&nbsp;»&nbsp;: absente. Tu ne trouveras donc
+        jamais, dans l'application, un bouton qui ne marche pas.
+      </p>
+    </div>
+  </section>
+
+  <!-- ────────────── L'appel ────────────── -->
+  <section>
+    <div class="wrap" style="text-align:center">
+      <h2>Ça s'ouvre en un clic</h2>
+      <p class="lead" style="margin:16px auto 24px">
+        Pas de compte à créer, pas d'adresse à donner, rien à installer.
+        Si ça ne te sert pas, tu fermes l'onglet.
+      </p>
+      <div class="hero-cta" style="justify-content:center">
+        <a class="btn btn-1" href="https://mahi010110.github.io/Open-Contact/">Ouvrir OpenContact</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="grid grid-3">
+      <div>
+        <h3>OpenContact</h3>
+        <p class="muted">
+          Le fil de ta recherche de stage, d'alternance ou d'emploi —
+          et celle de ton groupe.
+        </p>
+      </div>
+      <div>
+        <h3>Aller voir</h3>
+        <ul>
+          <li><a href="https://mahi010110.github.io/Open-Contact/">L'application</a></li>
+          <li><a href="https://github.com/mahi010110/Open-Contact">Le code source</a></li>
+          <li><a href="https://github.com/mahi010110/Open-Contact/blob/main/docs/surfaces.md">L'état des trois surfaces</a></li>
+          <li><a href="https://github.com/mahi010110/Open-Contact/blob/main/docs/feuille-de-route.md">La feuille de route</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Propriété</h3>
+        <ul>
+          <li><a href="https://github.com/mahi010110/Open-Contact/blob/main/LICENSE">La licence</a></li>
+          <li><a href="https://github.com/mahi010110/Open-Contact/blob/main/NOTICE.md">Les composants tiers</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="legal">
+      <p>
+        <b>OpenContact n'est pas un logiciel open source.</b> Son code est
+        visible pour que chacun puisse le lire et vérifier ce qu'il fait de
+        ses données — pas pour être réutilisé. Utiliser l'application est
+        libre et gratuit&nbsp;; l'exécuter ailleurs, la modifier ou la
+        redistribuer ne l'est pas.
+      </p>
+      <p class="mono" style="margin-top:12px">
+        Copyright © 2026 Maheydine. Tous droits réservés.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('theme').addEventListener('click', function(){
+  var r = document.documentElement;
+  var t = r.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  r.setAttribute('data-theme', t);
+  try{ localStorage.setItem('oc_site_theme', t); }catch(e){}
+});
+</script>
+
+</body>
+</html>

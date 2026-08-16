@@ -1,0 +1,122 @@
+Site de présentation d'OpenContact — Licence propriétaire à source visible
+===========================================================================
+
+Copyright (c) 2026 Maheydine (github.com/mahi010110).
+Tous droits réservés. / All rights reserved.
+
+Le texte français ci-dessous fait foi. An English summary follows,
+for information only.
+
+
+-------------------------------------------------------------------
+1. Ce que couvre cette licence
+-------------------------------------------------------------------
+
+« Le Site » désigne le code, les feuilles de style, les textes, les
+captures d'écran et les images contenus dans ce dépôt, à l'exception
+des polices de caractères visées au point 5.
+
+Le Site n'est PAS un logiciel libre et n'est PAS open source. Sa
+publication sur un dépôt public sert la transparence : elle n'emporte
+aucune cession de droits.
+
+
+-------------------------------------------------------------------
+2. Ce qui est permis
+-------------------------------------------------------------------
+
+  a) CONSULTER le site publié, librement et gratuitement ;
+
+  b) LIRE le code source de ce dépôt, à des fins d'étude, d'évaluation
+     ou de vérification ;
+
+  c) CITER de courts extraits, dans un cadre pédagogique, journalistique
+     ou critique, en indiquant clairement leur origine ;
+
+  d) PARTAGER un lien vers le site.
+
+
+-------------------------------------------------------------------
+3. Ce qui est interdit sans accord écrit préalable
+-------------------------------------------------------------------
+
+  a) reproduire, héberger ou republier le Site, en tout ou en partie ;
+
+  b) le modifier, l'adapter ou en tirer une œuvre dérivée ;
+
+  c) le distribuer, le revendre, le louer ou le sous-licencier ;
+
+  d) l'exploiter commercialement, directement ou indirectement ;
+
+  e) en retirer ou en altérer les mentions de copyright ;
+
+  f) reprendre le nom « OpenContact », son logo ou son identité visuelle
+     pour désigner un autre produit ou service ;
+
+  g) réutiliser sa mise en page, sa charte ou ses textes pour un autre
+     site.
+
+
+-------------------------------------------------------------------
+4. Le fork sur GitHub
+-------------------------------------------------------------------
+
+Ce dépôt est public. Les conditions d'utilisation de GitHub permettent
+à tout utilisateur de la plateforme de « forker » un dépôt public, et
+le titulaire ne peut pas l'en empêcher tant que le dépôt reste public.
+
+Un tel fork ne confère AUCUN des droits refusés au point 3.
+
+
+-------------------------------------------------------------------
+5. Polices de caractères
+-------------------------------------------------------------------
+
+Les polices contenues dans `assets/fonts/` ne sont PAS couvertes par la
+présente licence. Silkscreen, IBM Plex Mono et Public Sans sont sous
+SIL Open Font License 1.1 et demeurent la propriété de leurs auteurs.
+Le texte de chaque licence accompagne la police correspondante.
+
+
+-------------------------------------------------------------------
+6. Absence de garantie
+-------------------------------------------------------------------
+
+LE SITE EST FOURNI « EN L'ÉTAT », SANS GARANTIE D'AUCUNE SORTE. LE
+TITULAIRE NE POURRA ÊTRE TENU RESPONSABLE D'AUCUNE RÉCLAMATION NI
+D'AUCUN DOMMAGE DÉCOULANT DU SITE OU DE SON UTILISATION.
+
+
+-------------------------------------------------------------------
+7. Réserve de droits
+-------------------------------------------------------------------
+
+Tous les droits non expressément accordés sont réservés au titulaire,
+qui conserve la faculté pleine et entière d'exploiter, de céder ou de
+republier le Site sous d'autres termes.
+
+Demandes d'autorisation : github.com/mahi010110/Open-Contact
+
+
+===================================================================
+English summary — for information only.
+The French text above prevails.
+===================================================================
+
+This is NOT open source. Viewing the published site and reading this
+repository's source is permitted, as is quoting short excerpts with
+attribution and sharing a link. Reproducing, hosting, republishing,
+modifying, redistributing or commercially exploiting the site — or
+reusing its layout, styling or copy for another site — requires prior
+written permission. The "OpenContact" name, logo and visual identity
+may not be used for any other product or service.
+
+GitHub forks are a fact of the platform and grant none of the rights
+denied above.
+
+Fonts in assets/fonts/ are NOT covered by this licence: Silkscreen,
+IBM Plex Mono and Public Sans are under the SIL Open Font License 1.1
+and remain the property of their authors.
+
+THE SITE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. ALL RIGHTS
+NOT EXPRESSLY GRANTED ARE RESERVED.
