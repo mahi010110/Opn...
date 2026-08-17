@@ -66,7 +66,7 @@ OC_REPO=/chemin/vers/Open-Contact node outils/captures.mjs
 
 ## Propriété
 
-© 2026 Maheydine. Tous droits réservés — voir [`LICENSE`](LICENSE).
+© 2026 Maheydine Saadi Hamed Ounchiouene. Tous droits réservés — voir [`LICENSE`](LICENSE).
 
 Les polices sont sous SIL Open Font License 1.1 et restent la propriété de
 leurs auteurs ; leurs licences sont dans `assets/fonts/`.
